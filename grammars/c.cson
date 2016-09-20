@@ -457,7 +457,7 @@
     'match': '^\\s*(((#)\\s*pragma\\s+mark)\\s+(.*))'
     'name': 'meta.section'
   'preprocessor-rule-disabled':
-    'begin': '^\\s*(((#)if)\\s+(0)\\b).*'
+    'begin': '^\\s*(((#)if)\\s+(0+|0[xXb]0+)(?![1-9a-fA-F])\\b).*'
     'beginCaptures':
       '1':
         'name': 'meta.preprocessor.c'
@@ -507,7 +507,7 @@
       }
     ]
   'preprocessor-rule-disabled-block':
-    'begin': '^\\s*(((#)if)\\s+(0)\\b).*'
+    'begin': '^\\s*(((#)if)\\s+(0+|0[xXb]0+)(?![1-9a-fA-F])\\b).*'
     'beginCaptures':
       '1':
         'name': 'meta.preprocessor.c'
@@ -557,7 +557,7 @@
       }
     ]
   'preprocessor-rule-enabled':
-    'begin': '^\\s*(((#)if)\\s+(0*1)\\b)'
+    'begin': '^\\s*(((#)if)\\s+((?:0[xXb]0*[1-9a-fA-F][0-9a-fA-F]*)|(?:0*[1-9]\\d*))\\b)'
     'beginCaptures':
       '1':
         'name': 'meta.preprocessor.c'
@@ -607,7 +607,7 @@
       }
     ]
   'preprocessor-rule-enabled-block':
-    'begin': '^\\s*(((#)if)\\s+(0*1)\\b)'
+    'begin': '^\\s*(((#)if)\\s+((?:0[xXb]0*[1-9a-fA-F][0-9a-fA-F]*)|(?:0*[1-9]\\d*))\\b)'
     'beginCaptures':
       '1':
         'name': 'meta.preprocessor.c'
